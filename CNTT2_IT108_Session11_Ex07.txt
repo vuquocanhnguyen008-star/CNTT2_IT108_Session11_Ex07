@@ -1,0 +1,30 @@
+Bài 7: Gỡ Lỗi Tài Liệu Kế Hoạch Hội Nghị Khoa Học Sinh Viên
+## **PHẦN 1: PHÂN TÍCH LỖI**
+### **1. Xác định lỗi cụ thể & Giải thích cơ chế**
+* **Lỗi cụ thể của 7 dòng tiêu đề:** Cả 7 dòng tiêu đề trong bảng đều dùng **định dạng thủ công (Manual Formatting / style Normal)** như đổi cỡ chữ, in đậm, tô màu... chứ **không được gán Heading Styles (H1, H2, H3)**.
+* **Tại sao Auto TOC không hoạt động?**
+* **Cơ chế:** Tính năng Auto TOC trong Word hoạt động bằng cách **quét các văn bản có gán nhãn Heading (H1, H2, H3...)** để tự động thu thập làm mục lục.
+* **Nguyên nhân:** Khi chỉ chỉnh thủ công trên nền `Normal`, Word vẫn hiểu đó là đoạn văn bản thường chứ không phải tiêu đề, dẫn đến mục lục xuất ra bị rỗng.
+
+### **2. Lỗi nhầm cấp Heading ở dòng `2.1.1. Tiểu ban Kỹ thuật**`
+* **Hiện trạng trong bài:** Dòng `2.1.1` đang bị gán thành **Heading 3** trong khi theo phân cấp chuẩn đúng ra phải là **Heading 2** (cùng cấp với `2.1. Ban Nội dung`).
+* **Tác hại đối với Mục lục:** Mục lục hiển thị cấp độ dựa trên thụt lùi đầu dòng ($H1 \rightarrow \text{lề ngoài}$, $H2 \rightarrow \text{thụt 1 tab}$, $H3 \rightarrow \text{thụt 2 tab}$). Việc gán sai thành H3 khiến tiêu đề này bị thụt lề quá sâu vào trong, làm mất đi tính logic và phân cấp chính xác của tài liệu.
+
+## **PHẦN 2: SỬA LỖI & NGHIỆM THU**
+### **3. Thao tác sửa cấu trúc Heading cho 7 dòng tiêu đề**
+Bôi đen từng dòng tiêu đề và sử dụng phím tắt hoặc chọn Style trên thanh công cụ:
+1. **`1. Thông tin chung hội nghị`** $\rightarrow$ Bấm **`Ctrl` + `Alt` + `1**` (Gán **Heading 1**).
+2. **`1.1. Tên hội nghị`** $\rightarrow$ Bấm **`Ctrl` + `Alt` + `2**` (Gán **Heading 2**).
+3. **`1.2. Thời gian & địa điểm`** $\rightarrow$ Bấm **`Ctrl` + `Alt` + `2**` (Gán **Heading 2**).
+4. **`2. Cơ cấu ban tổ chức`** $\rightarrow$ Bấm **`Ctrl` + `Alt` + `1**` (Gán **Heading 1**).
+5. **`2.1. Ban Nội dung`** $\rightarrow$ Bấm **`Ctrl` + `Alt` + `2**` (Gán **Heading 2**).
+6. **`2.1.1. Tiểu ban Kỹ thuật`** $\rightarrow$ Bấm **`Ctrl` + `Alt` + `2**` (Sửa lại thành **Heading 2**).
+7. **`3. Lịch trình sự kiện`** $\rightarrow$ Bấm **`Ctrl` + `Alt` + `1**` (Gán **Heading 1**).
+*(Lưu ý: Bấm **`Ctrl` + `Shift` + `N**` nếu cần đưa dòng đó về style Normal trước khi gán lại Heading)*.
+
+### **4. Xử lý bẫy dữ liệu (Cập nhật số trang mục lục)**
+* **Trả lời:** Mục lục **KHÔNG** tự động cập nhật số trang khi nội dung bị đẩy từ trang 2 sang trang 4. Nếu không thao tác thêm, mục lục vẫn giữ nguyên số trang cũ (sai lệch).
+* **Thao tác cần làm:**
+1. Nhấp chuột vào bảng Mục lục tự động.
+2. Bấm phím **`F9`** (hoặc nhấp chuột phải chọn **Update Field**).
+3. Chọn **Update page numbers only** *(hoặc Update entire table)* rồi nhấn **OK**.
